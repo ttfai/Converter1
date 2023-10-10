@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HOME</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <br>
+    <br>
+
+    <div class="div1">
+ 
+
+        <h3>Celsius to Fahrenheit</h3>
+        <input type="number" id="celsiusInput" name="celsiusInput">
+        <button type="button" onclick="celsiusToFahrenheit()">Convert</button>
+        <p>The temperature in Fahrenheit is: </p>
+        <p id="celsiusToFahrenheitResult">(answer)</p>
+
+        <script>
+            function celsiusToFahrenheit() {
+                let celsius = parseInt(document.getElementById("celsiusInput").value);
+                let fahrenheit = (celsius * 9/5) + 32;
+                document.getElementById("celsiusToFahrenheitResult").innerHTML = fahrenheit;
+            }
+        </script>
+
+        <br>
+        <br>
+        <hr>
+        <br>
+
+        <h3>Fahrenheit to Celsius</h3>
+        <input type="number" id="fahrenheitInput" name="fahrenheitInput">
+        <button type="button" onclick="fahrenheitToCelsius()">Convert</button>
+        <p>The temperature in Celsius is: </p>
+        <p id="fahrenheitToCelsiusResult">(answer)</p>
+
+        <script>
+            function fahrenheitToCelsius() {
+                let fahrenheit = parseInt(document.getElementById("fahrenheitInput").value);
+                let celsius = (fahrenheit - 32) * 5/9;
+                document.getElementById("fahrenheitToCelsiusResult").innerHTML = celsius;
+            }
+        </script>
+
+        <script>
+            function logout() {
+                let response = confirm("Are you sure you want to log out?");
+                if (response) {
+                    window.location.href = 'index.html'; 
+                }
+            }
+        </script>
+    </div>
+    <button type='button' onclick="logout()">Logout</button>
+</body>
+</html>
